@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="TDS Payment Code Reference Tool — Income Tax Act 2025 · Effective 1 April 2026 · JMR & Associates LLP, Chartered Accountants, Mumbai" />
+<title>TDS Code Lookup — JMR & Associates LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ─── RESET ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  background: #f5f3ef;
+  color: #1a1a18;
+  min-height: 100vh;
+}
+
+/* ─── VARIABLES ──────────────────────────── */
+:root {
+  --navy:   #0e1c2f;
+  --navy2:  #162640;
+  --navy3:  #1d3356;
+  --gold:   #c49a1e;
+  --gold2:  #d4aa2e;
+  --gold3:  #e8c84a;
+  --cream:  #fdf9f2;
+  --cream2: #f5f1e8;
+  --sand:   #e8e2d5;
+  --ink:    #1a1a18;
+  --muted:  #6b6860;
+  --subtle: #9a9690;
+  --border: rgba(26,26,24,0.1);
+  --border2:rgba(26,26,24,0.16);
+  --green:  #0d5c3a;
+  --green-bg:#e8f5ee;
+  --green-border:#b0dfc4;
+  --blue:   #1a407a;
+  --blue-bg:#e8f0fa;
+  --blue-border:#a8c4e8;
+  --amber:  #8a5200;
+  --amber-bg:#fff3e0;
+  --amber-border:#f0c870;
+  --red:    #8b1a1a;
+  --r: 1rem;
+}
+
+/* ─── TOP CONTACT BAR ────────────────────── */
+.topbar {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(196,154,30,0.25);
+  padding: 7px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #8090a8;
+  letter-spacing: 0.01em;
+}
+.topbar a { color: var(--gold2); text-decoration: none; }
+.topbar a:hover { color: var(--gold3); }
+.topbar-hours { display: flex; align-items: center; gap: 6px; }
+.topbar-hours::before { content: '●'; color: #3a8a5c; font-size: 8px; }
+.topbar-contact { display: flex; gap: 20px; }
+
+/* ─── HEADER / NAV ───────────────────────── */
+header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  position: sticky; top: 0; z-index: 200;
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; gap: 20px;
+  height: 70px;
+}
+.logo-mark {
+  width: 46px; height: 46px;
+  background: var(--gold);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 16px;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.logo-text { flex: 1; }
+.logo-text .firm-name {
+  font-family: 'Playfair Display', serif;
+  color: #fff; font-size: 18px; font-weight: 600;
+  line-height: 1.2;
+}
+.logo-text .firm-sub {
+  color: var(--gold);
+  font-size: 10.5px; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-top: 1px;
+}
+.header-badge {
+  background: rgba(196,154,30,0.15);
+  border: 1px solid rgba(196,154,30,0.35);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 11px; font-weight: 500;
+  color: var(--gold2);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.header-right {
+  display: flex; align-items: center; gap: 12px;
+  margin-left: auto;
+}
+nav { display: flex; gap: 4px; }
+nav a {
+  color: #8090a8;
+  font-size: 13px; font-weight: 400;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: color .15s, background .15s;
+}
+nav a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+
+/* ─── HERO ───────────────────────────────── */
+.hero {
+  background: linear-gradient(170deg, var(--navy2) 0%, var(--navy) 60%, #0a1520 100%);
+  padding: 52px 24px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 600px 300px at 80% 20%, rgba(196,154,30,0.06), transparent),
+    radial-gradient(ellipse 400px 400px at 10% 80%, rgba(30,60,100,0.5), transparent);
+  pointer-events: none;
+}
+/* Decorative rule lines */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196,154,30,0.4), transparent);
+}
+.hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  padding: 5px 14px;
+  border: 1px solid rgba(196,154,30,0.3);
+  border-radius: 20px;
+  background: rgba(196,154,30,0.08);
+}
+.hero-eyebrow::before { content: '◈'; font-size: 10px; }
+h1.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700; color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero-title em { color: var(--gold2); font-style: normal; }
+.hero-subtitle {
+  color: #788aa0; font-size: 14px;
+  max-width: 540px; margin: 0 auto 32px;
+  text-align: center; line-height: 1.7;
+}
+
+/* ─── STAT CHIPS ─────────────────────────── */
+.stat-chips {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 28px;
+}
+.stat-chip {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 22px; cursor: pointer;
+  text-align: center; min-width: 140px;
+  transition: border-color .18s, background .18s;
+}
+.stat-chip:hover, .stat-chip.active {
+  background: rgba(196,154,30,0.14);
+  border-color: var(--gold);
+}
+.stat-chip .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; font-weight: 700; color: #fff;
+  line-height: 1;
+}
+.stat-chip .lbl { font-size: 11px; color: #8090a8; margin-top: 4px; font-weight: 400; }
+.stat-chip[data-type="rate"] .num { color: #5cbe8a; }
+.stat-chip[data-type="new"] .num { color: #6ab0f0; }
+.stat-chip.active .lbl { color: var(--gold2); }
+
+/* ─── SEARCH PANEL ───────────────────────── */
+.search-panel {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.mode-tabs {
+  display: flex; gap: 4px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px; padding: 4px;
+  margin-bottom: 16px;
+}
+.mode-tab {
+  flex: 1; padding: 9px 12px;
+  background: transparent; border: none; cursor: pointer;
+  border-radius: 8px; color: #7a8fa8; font-size: 13px; font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: background .15s, color .15s;
+}
+.mode-tab.active {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 600;
+}
+.mode-tab-icon { font-size: 14px; font-family: 'DM Mono', monospace; }
+.search-row { display: flex; gap: 10px; }
+.search-input-wrap { flex: 1; position: relative; }
+.search-icon {
+  position: absolute; left: 14px; top: 50%;
+  transform: translateY(-50%);
+  color: #8090a8; font-size: 18px; pointer-events: none;
+}
+input[type="text"].main-input {
+  width: 100%; padding: 13px 16px 13px 44px;
+  background: rgba(255,255,255,0.94);
+  border: 2px solid transparent;
+  border-radius: 10px; font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  transition: border-color .15s;
+  outline: none;
+}
+input[type="text"].main-input:focus { border-color: var(--gold); }
+input[type="text"].main-input::placeholder { color: #b0a898; }
+.search-btn {
+  padding: 13px 28px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none; border-radius: 10px;
+  font-size: 14px; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; flex-shrink: 0;
+  letter-spacing: 0.02em;
+  transition: background .15s;
+}
+.search-btn:hover { background: var(--gold2); }
+
+/* Autocomplete */
+.autocomplete {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #fff; border-radius: 10px;
+  border: 1px solid var(--sand);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  z-index: 100; overflow: hidden;
+}
+.autocomplete-item {
+  display: block; width: 100%; text-align: left;
+  padding: 10px 16px; border: none; background: transparent;
+  cursor: pointer; font-size: 13px;
+  font-family: 'DM Mono', monospace; font-weight: 500;
+  color: var(--ink); border-bottom: 1px solid #f5f1e8;
+}
+.autocomplete-item:hover { background: var(--cream2); }
+.autocomplete-item:last-child { border-bottom: none; }
+
+/* Quick chips */
+.quick-chips {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 14px; justify-content: center;
+}
+.quick-chip {
+  padding: 4px 12px;
+  background: rgba(196,154,30,0.12);
+  color: var(--gold2);
+  border: 1px solid rgba(196,154,30,0.28);
+  border-radius: 20px; cursor: pointer;
+  font-size: 11.5px; font-weight: 500;
+  font-family: 'DM Mono', monospace;
+  transition: background .13s;
+}
+.quick-chip:hover { background: rgba(196,154,30,0.22); }
+
+/* ─── MAIN CONTENT ───────────────────────── */
+.main-wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+
+/* ─── RESULTS TOOLBAR ────────────────────── */
+.toolbar {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: 12px; margin-bottom: 18px;
+}
+.toolbar-count {
+  font-weight: 600; font-size: 15px; color: var(--ink);
+  display: flex; align-items: center; gap: 8px;
+}
+.toolbar-count .check { color: var(--green); font-size: 18px; }
+.toolbar-count .cross { color: var(--red); font-size: 18px; }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.filter-chip {
+  padding: 4px 12px; font-size: 11.5px; font-weight: 400;
+  border-radius: 20px; cursor: pointer; border: 1px solid var(--sand);
+  background: #fff; color: var(--muted);
+  transition: background .12s, color .12s, border-color .12s;
+}
+.filter-chip.active {
+  background: var(--navy); color: #fff; border-color: var(--navy);
+}
+.toolbar-actions { display: flex; gap: 8px; margin-left: auto; }
+.action-btn {
+  padding: 8px 14px; font-size: 12px; font-weight: 500;
+  border-radius: 8px; border: 1px solid var(--sand);
+  background: #fff; color: var(--ink); cursor: pointer;
+  display: flex; align-items: center; gap: 5px;
+  transition: background .12s;
+}
+.action-btn:hover { background: var(--cream2); }
+
+/* ─── CARD GRID ──────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 14px;
+}
+
+/* ─── RESULT CARD ────────────────────────── */
+.result-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8e4dc;
+  position: relative;
+  padding: 16px 16px 14px;
+  transition: box-shadow .18s, transform .18s;
+  overflow: hidden;
+}
+.result-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  border-radius: 4px 0 0 4px;
+}
+.result-card[data-ch="rate"]      ::before, .result-card[data-ch="rate"]::before      { background: #f0a030; }
+.result-card[data-ch="threshold"]::before, .result-card[data-ch="threshold"]::before { background: #3d82d8; }
+.result-card[data-ch="new"]       ::before, .result-card[data-ch="new"]::before       { background: #2db878; }
+.result-card[data-ch="same"]      ::before, .result-card[data-ch="same"]::before      { background: #dcd8d0; }
+.result-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+/* Card top row */
+.card-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 8px; margin-bottom: 10px;
+}
+.card-badges { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.badge {
+  font-size: 10px; font-weight: 600; padding: 3px 8px;
+  border-radius: 20px; letter-spacing: 0.04em;
+}
+.badge-rate      { background: #fff4e0; color: #8a5200; border: 1px solid #f0c870; }
+.badge-threshold { background: #e8f0fa; color: #1a407a; border: 1px solid #a8c4e8; }
+.badge-new       { background: #e8f5ee; color: #0d5c3a; border: 1px solid #b0dfc4; }
+.badge-same      { background: #f5f3ef; color: #6b6860; border: 1px solid #ddd8d0; }
+.badge-inferred  { background: #f8f7f5; color: #9a9690; border: 1px solid #e0dcd5; }
+.badge-portal    { background: #e8f5ee; color: #0d5c3a; border: 1px solid #b0dfc4; }
+.badge-cat       { font-size: 10px; color: #9a9690; font-style: italic; font-weight: 400; }
+
+/* Payment code button */
+.code-btn {
+  background: var(--navy);
+  color: var(--gold2);
+  border: none; border-radius: 10px;
+  padding: 5px 16px; cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-weight: 700; font-size: 20px;
+  flex-shrink: 0; letter-spacing: 0.06em;
+  transition: color .18s, background .18s;
+  white-space: nowrap;
+}
+.code-btn.copied { background: #0d5c3a; color: #fff; font-size: 13px; }
+
+/* Card body */
+.card-nature {
+  font-weight: 600; font-size: 13px; color: var(--ink);
+  line-height: 1.5; margin-bottom: 3px;
+}
+.card-sub {
+  font-size: 11px; color: var(--muted);
+  font-style: italic; margin-bottom: 10px;
+}
+
+/* Section transition strip */
+.section-strip {
+  display: flex; align-items: center; gap: 7px;
+  margin-bottom: 10px; flex-wrap: wrap;
+}
+.sec-old {
+  background: #fff8e8; color: #8a5200;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; font-weight: 600;
+  padding: 3px 8px; border-radius: 6px;
+  border: 1px solid #f0c870;
+}
+.sec-arrow { color: var(--subtle); font-size: 14px; }
+.sec-new {
+  background: var(--green-bg); color: var(--green);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; font-weight: 600;
+  padding: 3px 8px; border-radius: 6px;
+  border: 1px solid var(--green-border);
+}
+.sec-form {
+  margin-left: auto;
+  font-size: 10px; color: var(--subtle);
+  background: #f8f7f5; padding: 2px 8px;
+  border-radius: 4px; border: 1px solid var(--sand);
+}
+
+/* Rate grid */
+.rate-grid {
+  display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 6px;
+}
+.rate-cell {
+  background: #f8f7f5; border-radius: 8px; padding: 8px 10px;
+}
+.rate-cell.highlight { background: #e8f5ee; border: 1px solid var(--green-border); }
+.rate-cell-label {
+  font-size: 9px; color: var(--subtle);
+  font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.07em; margin-bottom: 3px;
+}
+.rate-cell-val {
+  font-weight: 700; font-size: 14px; color: var(--ink);
+}
+.rate-cell-val.new-rate { font-size: 17px; color: var(--green); }
+.rate-cell-val.old-crossed {
+  color: var(--subtle); text-decoration: line-through;
+  text-decoration-color: #e05555;
+}
+.rate-cell-val.threshold { font-size: 11px; font-weight: 500; color: var(--muted); line-height: 1.4; }
+
+/* ─── EMPTY STATE ────────────────────────── */
+.empty-state {
+  text-align: center; padding: 64px 24px;
+  background: #fff; border-radius: 18px;
+  border: 1px solid #e8e4dc;
+}
+.empty-state .emoji { font-size: 44px; margin-bottom: 16px; }
+.empty-state h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.empty-state p { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+.try-chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.try-chip {
+  padding: 7px 16px; font-size: 12px;
+  font-family: 'DM Mono', monospace; font-weight: 500;
+  background: #f5f3ef; color: var(--ink);
+  border: 1px solid var(--sand); border-radius: 20px; cursor: pointer;
+}
+.try-chip:hover { background: var(--cream2); }
+
+/* ─── LANDING ────────────────────────────── */
+.landing { }
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 600;
+  color: var(--ink); text-align: center;
+  margin-bottom: 6px;
+}
+.section-subheading {
+  text-align: center; color: var(--muted); font-size: 13px;
+  margin-bottom: 22px;
+}
+.changes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px; margin-bottom: 28px;
+}
+.change-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid #e8e4dc;
+  padding: 20px; position: relative; overflow: hidden;
+}
+.change-card::after {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  border-radius: 14px 14px 0 0;
+}
+.change-card[data-accent="gold"]::after   { background: var(--gold); }
+.change-card[data-accent="green"]::after  { background: #2db878; }
+.change-card[data-accent="blue"]::after   { background: #3d82d8; }
+.change-card[data-accent="purple"]::after { background: #7c5cbf; }
+.change-icon { font-size: 26px; margin-bottom: 10px; }
+.change-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 6px; }
+.change-text { color: var(--muted); font-size: 12px; line-height: 1.75; }
+
+/* Browse categories */
+.browse-panel {
+  background: #fff; border-radius: 16px;
+  border: 1px solid #e8e4dc;
+  padding: 20px; margin-bottom: 24px;
+}
+.browse-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 14px; }
+.cat-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.cat-chip {
+  padding: 7px 14px; font-size: 12px; font-weight: 400;
+  border-radius: 10px; cursor: pointer;
+  background: #f8f7f5; color: var(--ink);
+  border: 1px solid var(--sand);
+  transition: background .13s;
+}
+.cat-chip:hover { background: var(--cream2); border-color: var(--sand); }
+.cat-chip .count { color: var(--subtle); font-size: 11px; }
+
+/* Disclaimer */
+.disclaimer {
+  background: #fffbee; border: 1px solid #f0c870;
+  border-radius: 12px; padding: 14px 18px;
+  display: flex; gap: 10px;
+}
+.disclaimer-icon { font-size: 18px; flex-shrink: 0; }
+.disclaimer-text { color: #7a5500; font-size: 12px; line-height: 1.75; }
+
+/* ─── FOOTER ─────────────────────────────── */
+footer {
+  background: var(--navy);
+  border-top: 3px solid var(--gold);
+  padding: 32px 24px;
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; gap: 40px; flex-wrap: wrap;
+  justify-content: space-between; align-items: flex-start;
+}
+.footer-brand .firm-name {
+  font-family: 'Playfair Display', serif;
+  color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 6px;
+}
+.footer-brand address {
+  font-style: normal; color: #788aa0;
+  font-size: 12.5px; line-height: 2;
+}
+.footer-brand address a { color: var(--gold2); text-decoration: none; }
+.footer-branch { color: #4a5a72; font-size: 11.5px; margin-top: 6px; }
+.footer-right { text-align: right; }
+.footer-meta-label { color: var(--gold2); font-weight: 600; font-size: 14px; margin-bottom: 5px; }
+.footer-meta-lines { color: #4a5a72; font-size: 12px; line-height: 2; }
+.footer-copy { color: #2e3e52; font-size: 11px; margin-top: 8px; }
+
+/* Print styles */
+@media print {
+  .hero, header, .topbar, .toolbar-actions, .search-panel, .stat-chips, .mode-tabs, .quick-chips { display: none !important; }
+  .result-card { page-break-inside: avoid; }
+  body { background: #fff; }
+  .main-wrap { padding: 0; }
+  footer { display: none; }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .topbar-contact { display: none; }
+  .header-badge { display: none; }
+  .stat-chip { min-width: 110px; }
+  .stat-chip .num { font-size: 24px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .rate-grid { grid-template-columns: 1fr 1fr; }
+  .rate-grid .rate-cell:last-child { grid-column: 1 / -1; }
+  .footer-right { text-align: left; }
+  nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <span class="topbar-hours">Mon–Sat &nbsp; 10:30 AM – 7:30 PM</span>
+  <div class="topbar-contact">
+    <a href="tel:02247482753">+022-47482753 / 54 / 55</a>
+    <a href="mailto:hr@jmrassociates.com">hr@jmrassociates.com</a>
+  </div>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">JMR</div>
+    <div class="logo-text">
+      <div class="firm-name">JMR &amp; Associates LLP</div>
+      <div class="firm-sub">Chartered Accountants · Est. 1986 · Mumbai</div>
+    </div>
+    <div class="header-right">
+      <nav>
+        <a href="https://www.jmrassociates.com/" target="_blank">Home</a>
+        <a href="https://www.jmrassociates.com/resource/Services/TDS.aspx" target="_blank">TDS</a>
+        <a href="https://www.jmrassociates.com/resource/About-Us/About_JMR.aspx" target="_blank">About</a>
+      </nav>
+      <span class="header-badge">TDS Code Reference · IT Act 2025</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO / SEARCH ── -->
+<div class="hero">
+  <div class="hero-inner" style="text-align:center;">
+    <div class="hero-eyebrow">Income Tax Act 2025 &nbsp;·&nbsp; Effective 1 April 2026</div>
+    <h1 class="hero-title">TDS Payment Code <em>Lookup</em></h1>
+    <p class="hero-subtitle">
+      Find the correct 4-digit payment code for every TDS section under the new Act.
+      Covers all Sections 392 &amp; 393 — Codes 1001 to 1067.
+    </p>
+
+    <!-- Stat chips -->
+    <div class="stat-chips">
+      <div class="stat-chip" data-type="all" onclick="applyQuick('all',this)">
+        <div class="num" id="total-count">47</div>
+        <div class="lbl">All Payment Codes</div>
+      </div>
+      <div class="stat-chip" data-type="rate" onclick="applyQuick('rate',this)">
+        <div class="num" id="rate-count">—</div>
+        <div class="lbl">Rate Reductions</div>
+      </div>
+      <div class="stat-chip" data-type="new" onclick="applyQuick('new',this)">
+        <div class="num" id="new-count">—</div>
+        <div class="lbl">New Provisions</div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-panel">
+      <div class="mode-tabs" id="mode-tabs">
+        <button class="mode-tab active" data-mode="section" onclick="switchMode('section',this)">
+          <span class="mode-tab-icon">#</span> Section Code
+        </button>
+        <button class="mode-tab" data-mode="description" onclick="switchMode('description',this)">
+          <span class="mode-tab-icon">≡</span> Description
+        </button>
+        <button class="mode-tab" data-mode="code" onclick="switchMode('code',this)">
+          <span class="mode-tab-icon">⊞</span> Payment Code
+        </button>
+      </div>
+
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text" id="search-input" class="main-input"
+            placeholder="Enter section e.g. 194C, 194J, 192A, 194IB…"
+            autocomplete="off"
+            oninput="handleInput(this.value)"
+            onkeydown="if(event.key==='Enter')doSearch(); if(event.key==='Escape')closeAC();"
+          />
+          <div class="autocomplete" id="autocomplete" style="display:none;"></div>
+        </div>
+        <button class="search-btn" onclick="doSearch()">Lookup</button>
+      </div>
+
+      <div class="quick-chips" id="quick-chips"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<div class="main-wrap">
+
+  <!-- Toolbar -->
+  <div class="toolbar" id="toolbar" style="display:none;">
+    <div class="toolbar-count" id="result-count-label"></div>
+    <div class="filter-chips" id="filter-chips"></div>
+    <div class="toolbar-actions">
+      <button class="action-btn" onclick="downloadCSV()">⬇ CSV</button>
+      <button class="action-btn" onclick="window.print()">🖨 Print</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="results-area"></div>
+
+  <!-- Landing -->
+  <div id="landing">
+    <h2 class="section-heading">Key Changes — IT Act 2025</h2>
+    <p class="section-subheading">All TDS challans from 1 April 2026 must use 4-digit payment codes (1001–1067)</p>
+
+    <div class="changes-grid">
+      <div class="change-card" data-accent="gold">
+        <div class="change-icon">⬇</div>
+        <div class="change-title">New Codes Mandatory from 1 Apr 2026</div>
+        <div class="change-text">Forms 138, 140 &amp; 141 require 4-digit codes. Old section numbers cause return defects from AY 2026-27.</div>
+      </div>
+      <div class="change-card" data-accent="green">
+        <div class="change-icon">📉</div>
+        <div class="change-title">Rate Reductions</div>
+        <div class="change-text">Commission/Brokerage 5%→2%. E-Commerce 1%→0.1%. Life Insurance Maturity 5%→2%. Securitisation Trust 25%/30%→10%.</div>
+      </div>
+      <div class="change-card" data-accent="blue">
+        <div class="change-icon">🆕</div>
+        <div class="change-title">New: Partner TDS (Code 1067)</div>
+        <div class="change-text">Firms &amp; LLPs must deduct TDS @ 10% on partner salary, bonus, commission &amp; interest exceeding ₹20,000 per FY.</div>
+      </div>
+      <div class="change-card" data-accent="purple">
+        <div class="change-icon">📋</div>
+        <div class="change-title">Threshold Increases</div>
+        <div class="change-text">Senior citizen bank interest ₹1L (from ₹50k). Other deposits ₹50k (from ₹40k). Professional fees ₹50k (from ₹30k).</div>
+      </div>
+    </div>
+
+    <div class="browse-panel">
+      <div class="browse-title">Browse by Category</div>
+      <div class="cat-chips" id="cat-browse"></div>
+    </div>
+
+    <div class="disclaimer">
+      <span class="disclaimer-icon">⚠</span>
+      <div class="disclaimer-text">
+        <strong>Disclaimer:</strong> This tool is prepared by JMR &amp; Associates LLP for informational purposes based on the Income Tax Act, 2025 and official CBDT sources as of April 2026. Codes marked ★ Inferred are subject to official confirmation. Always verify with the IT Portal or consult your tax advisor before filing returns or making tax payments.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="firm-name">JMR &amp; Associates LLP</div>
+      <address>
+        3303, Marathon Futurex, A Wing, Mafatlal Mills Compound<br />
+        N. M. Joshi Marg, Lower Parel, Mumbai – 400013<br />
+        <a href="tel:02247482753">+022-47482753 / 54 / 55</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:hr@jmrassociates.com">hr@jmrassociates.com</a>
+      </address>
+      <div class="footer-branch">Branch: Mulund (West) – 400080 &nbsp;·&nbsp; Dadar (East), Mumbai – 400014</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-meta-label">Tax Year 2026-27</div>
+      <div class="footer-meta-lines">
+        Income Tax Act 2025<br />
+        Sections 392 &amp; 393<br />
+        Codes 1001–1067 &nbsp;·&nbsp; v1.0
+      </div>
+      <div class="footer-copy">© 2026 JMR &amp; Associates LLP. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════
+   TDS DATA — All 47 entries (IT Act 2025)
+════════════════════════════════════════════ */
+const TDS_DATA = [
+  { sec:"192",     ns:"Sec 392",              code:"1001", inf:false, nature:"Salary — State / Local Govt Employees",                         sub:"",                           threshold:"Basic Exemption Limit",                   or:"Slab",    nr:"Slab",    ch:"same",      cat:"Salary & EPF",            form:"Form 138" },
+  { sec:"192",     ns:"Sec 392",              code:"1002", inf:false, nature:"Salary — Private / Non-Govt Employees",                        sub:"",                           threshold:"Basic Exemption Limit",                   or:"Slab",    nr:"Slab",    ch:"same",      cat:"Salary & EPF",            form:"Form 138" },
+  { sec:"192",     ns:"Sec 392",              code:"1003", inf:false, nature:"Salary — Union Government Employees",                          sub:"",                           threshold:"Basic Exemption Limit",                   or:"Slab",    nr:"Slab",    ch:"same",      cat:"Salary & EPF",            form:"Form 138" },
+  { sec:"192A",    ns:"Sec 392(7)",           code:"1004", inf:false, nature:"Premature EPF Withdrawal",                                     sub:"Accumulated balance",        threshold:"₹50,000",                                 or:"10%",     nr:"10%",     ch:"same",      cat:"Salary & EPF",            form:"Form 138" },
+  { sec:"194D",    ns:"393(1)[1(i)]",         code:"1005", inf:false, nature:"Insurance Commission",                                         sub:"",                           threshold:"₹20,000 (↑ from ₹15,000)",                or:"5%",      nr:"2%",      ch:"rate",      cat:"Commission & Brokerage",  form:"Form 140" },
+  { sec:"194H",    ns:"393(1)[1(ii)]",        code:"1006", inf:false, nature:"Commission / Brokerage (other than insurance)",                sub:"",                           threshold:"₹20,000 (↑ from ₹15,000)",                or:"5%",      nr:"2%",      ch:"rate",      cat:"Commission & Brokerage",  form:"Form 140" },
+  { sec:"194IB",   ns:"393(1)[2(i)]",         code:"1007", inf:true,  nature:"Rent — by Individual / HUF (not liable to tax audit)",         sub:"",                           threshold:"₹50,000 per month",                       or:"5%",      nr:"2%",      ch:"rate",      cat:"Rent",                    form:"Form 141" },
+  { sec:"194I(a)", ns:"393(1)[2(ii).D(a)]",   code:"1008", inf:false, nature:"Rent — Plant, Machinery & Furniture",                          sub:"",                           threshold:"₹50,000/month (changed from ₹2.4L/year)", or:"2%",      nr:"2%",      ch:"threshold", cat:"Rent",                    form:"Form 140" },
+  { sec:"194I(b)", ns:"393(1)[2(ii).D(b)]",   code:"1009", inf:false, nature:"Rent — Land, Building & Furniture",                            sub:"",                           threshold:"₹50,000/month (changed from ₹2.4L/year)", or:"10%",     nr:"10%",     ch:"threshold", cat:"Rent",                    form:"Form 140" },
+  { sec:"194IC",   ns:"393(1)[2(iii)]",       code:"1011", inf:false, nature:"JDA — Monetary Consideration to Landowner",                    sub:"",                           threshold:"No threshold",                            or:"10%",     nr:"10%",     ch:"same",      cat:"Rent",                    form:"Form 140" },
+  { sec:"194IA",   ns:"393(1)[3(i)]",         code:"1010", inf:true,  nature:"Transfer of Immovable Property",                               sub:"Buyer deducts — other than agri land", threshold:"₹50 lakh",                     or:"1%",      nr:"1%",      ch:"same",      cat:"Immovable Property",      form:"Form 141" },
+  { sec:"194LA",   ns:"393(1)[3(iii)]",       code:"1012", inf:false, nature:"Compensation — Compulsory Acquisition of Property",            sub:"",                           threshold:"₹5,00,000 (↑ from ₹2.5L)",               or:"10%",     nr:"10%",     ch:"threshold", cat:"Immovable Property",      form:"Form 141" },
+  { sec:"194K",    ns:"393(1)[4(i)]",         code:"1013", inf:false, nature:"Income from Mutual Fund Units / UTI / Specified Companies",    sub:"",                           threshold:"₹10,000 per FY",                          or:"10%",     nr:"10%",     ch:"same",      cat:"Investment Income",       form:"Form 140" },
+  { sec:"194LBA",  ns:"393(1)[4(ii)]",        code:"1014", inf:false, nature:"Business Trust Income — Interest (REIT/InvIT Resident)",       sub:"",                           threshold:"No threshold",                            or:"10%",     nr:"10%",     ch:"same",      cat:"Investment Income",       form:"Form 140" },
+  { sec:"194LBA",  ns:"393(1)[4(ii)]",        code:"1015", inf:false, nature:"Business Trust Income — Dividend (REIT/InvIT Resident)",       sub:"",                           threshold:"No threshold",                            or:"10%",     nr:"10%",     ch:"same",      cat:"Investment Income",       form:"Form 140" },
+  { sec:"194LBA",  ns:"393(1)[4(ii)]",        code:"1016", inf:false, nature:"Business Trust Income — Rent (REIT Resident)",                 sub:"",                           threshold:"No threshold",                            or:"10%",     nr:"10%",     ch:"same",      cat:"Investment Income",       form:"Form 140" },
+  { sec:"194LBB",  ns:"393(1)[4(iii)]",       code:"1017", inf:false, nature:"AIF Income — Category I & II (Resident unit holders)",         sub:"",                           threshold:"No threshold",                            or:"10%",     nr:"10%",     ch:"same",      cat:"Investment Income",       form:"Form 140" },
+  { sec:"194LBC",  ns:"393(1)[4(iv)]",        code:"1018", inf:false, nature:"Securitisation Trust Income (Resident investors)",             sub:"",                           threshold:"No threshold",                            or:"25%/30%", nr:"10%",     ch:"rate",      cat:"Investment Income",       form:"Form 140" },
+  { sec:"193",     ns:"393(1)[5(i)]",         code:"1019", inf:false, nature:"Interest on Securities (Debentures, Bonds)",                   sub:"",                           threshold:"₹10,000 per FY",                          or:"10%",     nr:"10%",     ch:"same",      cat:"Interest",                form:"Form 140" },
+  { sec:"194A",    ns:"393(1)[5(ii).D(a)]",   code:"1020", inf:false, nature:"Interest — Bank / Post Office Deposits (Senior Citizens)",     sub:"",                           threshold:"₹1,00,000 (↑ from ₹50,000)",              or:"10%",     nr:"10%",     ch:"threshold", cat:"Interest",                form:"Form 140" },
+  { sec:"194A",    ns:"393(1)[5(ii).D(b)]",   code:"1021", inf:false, nature:"Interest — Bank / Post Office Deposits (Others)",              sub:"",                           threshold:"₹50,000 (↑ from ₹40,000)",                or:"10%",     nr:"10%",     ch:"threshold", cat:"Interest",                form:"Form 140" },
+  { sec:"194A",    ns:"393(1)[5(iii)]",       code:"1022", inf:false, nature:"Interest — Other Sources (Non-bank, Non-PO)",                  sub:"Co-ops, companies, LLP etc.", threshold:"₹10,000 per FY",                        or:"10%",     nr:"10%",     ch:"same",      cat:"Interest",                form:"Form 140" },
+  { sec:"194C",    ns:"393(1)[6(i).D(a)]",    code:"1023", inf:false, nature:"Contractor / Sub-contractor (Individual or HUF)",              sub:"",                           threshold:"₹30,000 single / ₹1L per FY",             or:"1%",      nr:"1%",      ch:"same",      cat:"Contracts & Professional",form:"Form 140" },
+  { sec:"194C",    ns:"393(1)[6(i).D(b)]",    code:"1024", inf:false, nature:"Contractor / Sub-contractor (Others — Company, Firm, Trust)",  sub:"",                           threshold:"₹30,000 single / ₹1L per FY",             or:"2%",      nr:"2%",      ch:"same",      cat:"Contracts & Professional",form:"Form 140" },
+  { sec:"194M",    ns:"393(1)[6(ii)]",        code:"1025", inf:true,  nature:"Payments by Indiv/HUF — Contractor, Professional, Commission", sub:"Not liable to audit",        threshold:"₹50 lakh per FY",                         or:"5%",      nr:"2%",      ch:"rate",      cat:"Contracts & Professional",form:"Form 141" },
+  { sec:"194J(a)", ns:"393(1)[6(iii).D(a)]",  code:"1026", inf:false, nature:"Fees for Technical Services, Royalty on Films, Call Centre",   sub:"",                           threshold:"₹50,000 per FY (↑ from ₹30,000)",         or:"2%",      nr:"2%",      ch:"same",      cat:"Contracts & Professional",form:"Form 140" },
+  { sec:"194J(b)", ns:"393(1)[6(iii).D(b)]",  code:"1027", inf:false, nature:"Professional Fees (Doctors, Lawyers, CAs, Architects)",        sub:"",                           threshold:"₹50,000 per FY (↑ from ₹30,000)",         or:"10%",     nr:"10%",     ch:"same",      cat:"Contracts & Professional",form:"Form 140" },
+  { sec:"194J(b)", ns:"393(1)[6(iii).D(b)]",  code:"1028", inf:false, nature:"Director Remuneration / Fees / Commission (non-salary)",       sub:"Portal Verified",            threshold:"No threshold",                            or:"10%",     nr:"10%",     ch:"same",      cat:"Contracts & Professional",form:"Form 140" },
+  { sec:"194T",    ns:"393(1)[6(iv)]",        code:"1067", inf:false, nature:"Partner Remuneration — Salary, Bonus, Commission, Interest",   sub:"Firm/LLP to Partners — NEW", threshold:"₹20,000 per FY",                          or:"—",       nr:"10%",     ch:"new",       cat:"Contracts & Professional",form:"Form 141" },
+  { sec:"194",     ns:"393(1)[7]",            code:"1029", inf:false, nature:"Dividend — Declared by Domestic Company (incl. Preference)",   sub:"",                           threshold:"₹10,000 per FY",                          or:"10%",     nr:"10%",     ch:"same",      cat:"Dividends",               form:"Form 140" },
+  { sec:"194DA",   ns:"393(1)[8(i)]",         code:"1030", inf:false, nature:"Life Insurance Policy Maturity Proceeds (taxable component)",  sub:"",                           threshold:"₹1,00,000 per FY",                        or:"5%",      nr:"2%",      ch:"rate",      cat:"Miscellaneous",           form:"Form 141" },
+  { sec:"194Q",    ns:"393(1)[8(ii)]",        code:"1031", inf:false, nature:"Purchase of Goods (Buyer turnover > ₹10 Cr)",                  sub:"",                           threshold:"₹50 lakh per FY",                         or:"0.1%",    nr:"0.1%",    ch:"same",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194P",    ns:"393(1)[8(iii)]",       code:"1032", inf:false, nature:"Senior Citizen — Bank files TDS on total income (Age 75+)",    sub:"",                           threshold:"As per slab",                             or:"Slab",    nr:"Slab",    ch:"same",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194R",    ns:"393(1)[8(iv)]",        code:"1033", inf:false, nature:"Business / Professional Perquisite or Benefit (Cash only)",    sub:"",                           threshold:"₹20,000 per FY",                          or:"10%",     nr:"10%",     ch:"same",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194R",    ns:"393(1)[8(iv) Note 6]", code:"1034", inf:false, nature:"Business / Professional Benefit (In-kind or partly in-kind)", sub:"",                           threshold:"₹20,000 per FY",                          or:"10%",     nr:"10%",     ch:"same",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194O",    ns:"393(1)[8(v)]",         code:"1035", inf:false, nature:"E-Commerce — Sales by Participants (Amazon, Flipkart etc.)",   sub:"",                           threshold:"₹5L (Ind/HUF); No threshold (Others)",    or:"1%",      nr:"0.1%",    ch:"rate",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194S",    ns:"393(1)[8(vi)]",        code:"1036", inf:true,  nature:"Virtual Digital Assets / Crypto — Transfer (Indiv/HUF)",      sub:"",                           threshold:"₹50,000 (specified); ₹10,000 (others)",   or:"1%",      nr:"1%",      ch:"same",      cat:"Miscellaneous",           form:"Form 141" },
+  { sec:"194S",    ns:"393(1)[8(vi)]",        code:"1037", inf:false, nature:"Virtual Digital Assets / Crypto — Transfer (Others — cash)",   sub:"",                           threshold:"₹50,000 (specified); ₹10,000 (others)",   or:"1%",      nr:"1%",      ch:"same",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194S",    ns:"393(1)[8(vi) Note 6]", code:"1038", inf:false, nature:"Virtual Digital Assets — Mixed Consideration",                 sub:"Cash + in-kind",             threshold:"₹50,000 (specified); ₹10,000 (others)",   or:"1%",      nr:"1%",      ch:"same",      cat:"Miscellaneous",           form:"Form 140" },
+  { sec:"194B",    ns:"393(3)[1]",            code:"1058", inf:false, nature:"Lottery / Game Show / Gambling / Crossword (Cash payment)",    sub:"",                           threshold:"₹10,000 per transaction",                 or:"30%",     nr:"30%",     ch:"same",      cat:"Winnings",                form:"Form 140/144" },
+  { sec:"194B",    ns:"393(3)[1 Note 2]",     code:"1059", inf:false, nature:"Lottery / Gambling (In-kind — tax paid before release)",       sub:"",                           threshold:"₹10,000 per transaction",                 or:"30%",     nr:"30%",     ch:"same",      cat:"Winnings",                form:"Form 140/144" },
+  { sec:"194BA",   ns:"393(3)[2]",            code:"1060", inf:false, nature:"Online Gaming Winnings (Cash payment — Net winnings)",         sub:"",                           threshold:"No threshold",                            or:"30%",     nr:"30%",     ch:"same",      cat:"Winnings",                form:"Form 140/144" },
+  { sec:"194BA",   ns:"393(3)[2 Note 2]",     code:"1061", inf:false, nature:"Online Gaming Winnings (In-kind — tax paid before release)",   sub:"",                           threshold:"No threshold",                            or:"30%",     nr:"30%",     ch:"same",      cat:"Winnings",                form:"Form 140/144" },
+  { sec:"194BB",   ns:"393(3)[3]",            code:"1062", inf:false, nature:"Horse Race Winnings (Bookmaker or licensed person)",           sub:"",                           threshold:"₹10,000 aggregate per FY",                or:"30%",     nr:"30%",     ch:"same",      cat:"Winnings",                form:"Form 140/144" },
+  { sec:"194G",    ns:"393(3)[4]",            code:"1063", inf:false, nature:"Lottery Ticket Commission (Stockist, distributor, seller)",    sub:"",                           threshold:"₹20,000 (↑ from ₹15,000)",                or:"5%",      nr:"2%",      ch:"rate",      cat:"Winnings",                form:"Form 140/144" },
+  { sec:"194N",    ns:"393(3)[5.D(a)]",       code:"1064", inf:false, nature:"Cash Withdrawal — Co-operative Society",                      sub:"Sec 206AB removed",          threshold:"₹3 Crore",                                or:"2%/5%",   nr:"2%",      ch:"new",       cat:"Cash & NSS",              form:"Form 140/144" },
+  { sec:"194N",    ns:"393(3)[5.D(b)]",       code:"1065", inf:false, nature:"Cash Withdrawal — Others (Bank, Post Office)",                 sub:"No more non-filer check",    threshold:"₹1 Crore",                                or:"2%/5%",   nr:"2%",      ch:"new",       cat:"Cash & NSS",              form:"Form 140/144" },
+  { sec:"194EE",   ns:"393(3)[6]",            code:"1066", inf:false, nature:"NSS / National Savings Scheme Withdrawal",                    sub:"",                           threshold:"₹2,500",                                  or:"10%",     nr:"10%",     ch:"same",      cat:"Cash & NSS",              form:"Form 140/144" },
+];
+
+/* ─── STATE ─────────────────────────────── */
+let currentMode    = 'section';
+let currentResults = [];
+let searched       = false;
+let currentCatFilter = 'All';
+let copiedCode     = null;
+const ALL_SECTIONS = [...new Set(TDS_DATA.map(d=>d.sec))].sort();
+const ALL_CODES    = [...new Set(TDS_DATA.map(d=>d.code))].sort();
+const CATEGORIES   = [...new Set(TDS_DATA.map(d=>d.cat))];
+
+/* ─── INIT ──────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const rateCount = TDS_DATA.filter(d=>d.ch==='rate').length;
+  const newCount  = TDS_DATA.filter(d=>d.ch==='new').length;
+  document.getElementById('total-count').textContent = TDS_DATA.length;
+  document.getElementById('rate-count').textContent  = rateCount;
+  document.getElementById('new-count').textContent   = newCount;
+  buildQuickChips();
+  buildCatBrowse();
+});
+
+/* ─── SEARCH ────────────────────────────── */
+function switchMode(m, btn) {
+  currentMode = m;
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const inp = document.getElementById('search-input');
+  inp.value = '';
+  const placeholders = {
+    section:     'Enter section e.g. 194C, 194J, 192A, 194IB…',
+    description: 'Enter keywords e.g. rent, contractor, salary, crypto…',
+    code:        'Enter payment code e.g. 1023, 1027, 1067…',
+  };
+  inp.placeholder = placeholders[m];
+  closeAC();
+  buildQuickChips();
+  if (searched) { currentResults=[]; searched=false; currentCatFilter='All'; renderResults([]); }
+}
+
+function handleInput(val) {
+  const ac = document.getElementById('autocomplete');
+  let sugs = [];
+  if (currentMode==='section' && val.length>=2) {
+    const s = val.toUpperCase().replace(/\s/g,'');
+    sugs = ALL_SECTIONS.filter(x=>x.toUpperCase().replace(/\s/g,'').includes(s)).slice(0,8);
+  } else if (currentMode==='code' && val.length>=1) {
+    sugs = ALL_CODES.filter(x=>x.includes(val.trim())).slice(0,8);
+  }
+  if (sugs.length) {
+    ac.innerHTML = sugs.map(s=>`<button class="autocomplete-item" onclick="selectSug('${s}')">${s}</button>`).join('');
+    ac.style.display = 'block';
+  } else { closeAC(); }
+}
+
+function selectSug(s) {
+  document.getElementById('search-input').value = s;
+  closeAC();
+  doSearch(s);
+}
+function closeAC() {
+  document.getElementById('autocomplete').style.display = 'none';
+}
+
+function doSearch(q) {
+  const query = (q !== undefined ? q : document.getElementById('search-input').value).trim();
+  let res = [];
+  if (currentMode==='section') {
+    const s = query.toUpperCase().replace(/\s/g,'');
+    if (s) res = TDS_DATA.filter(d=>d.sec.toUpperCase().replace(/\s/g,'').includes(s));
+  } else if (currentMode==='description') {
+    const words = query.toLowerCase().split(/\s+/).filter(Boolean);
+    if (words.length) res = TDS_DATA.filter(d=>{
+      const txt = `${d.nature} ${d.sub||''} ${d.cat}`.toLowerCase();
+      return words.every(w=>txt.includes(w));
+    });
+  } else {
+    if (query) res = TDS_DATA.filter(d=>d.code.includes(query));
+  }
+  currentResults = res; searched = true; currentCatFilter = 'All';
+  renderResults(res, query);
+  closeAC();
+  document.getElementById('landing').style.display = 'none';
+}
+
+function applyQuick(type, el) {
+  document.querySelectorAll('.stat-chip').forEach(c=>c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  let res = [];
+  if (type==='all')  res = [...TDS_DATA].sort((a,b)=>+a.code-+b.code);
+  if (type==='rate') res = TDS_DATA.filter(d=>d.ch==='rate');
+  if (type==='new')  res = TDS_DATA.filter(d=>d.ch==='new');
+  currentResults = res; searched = true; currentCatFilter = 'All';
+  document.getElementById('search-input').value = '';
+  renderResults(res, type==='all'?'All Codes':type==='rate'?'Rate Reductions':'New Provisions');
+  closeAC();
+  document.getElementById('landing').style.display = 'none';
+}
+
+function applyCatFilter(cat, el) {
+  currentCatFilter = cat;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  const filtered = currentResults.filter(d=>cat==='All'||d.cat===cat);
+  document.getElementById('result-count-label').innerHTML = countLabel(filtered);
+  renderCards(filtered);
+}
+
+/* ─── RENDER ─────────────────────────────── */
+function renderResults(res, queryLabel) {
+  const toolbar = document.getElementById('toolbar');
+  const area    = document.getElementById('results-area');
+  const landing = document.getElementById('landing');
+
+  toolbar.style.display = 'flex';
+  landing.style.display = 'none';
+
+  // filter chips
+  const filterEl = document.getElementById('filter-chips');
+  const cats = ['All',...CATEGORIES];
+  filterEl.innerHTML = cats.map(c=>{
+    const cnt = c==='All' ? res.length : res.filter(d=>d.cat===c).length;
+    if (cnt===0 && c!=='All') return '';
+    return `<button class="filter-chip${c==='All'?' active':''}" onclick="applyCatFilter('${c}',this)">${c} <span style="opacity:.55">(${cnt})</span></button>`;
+  }).join('');
+
+  document.getElementById('result-count-label').innerHTML = countLabel(res);
+  renderCards(res);
+}
+
+function countLabel(res) {
+  const icon = res.length>0 ? '<span class="check">✓</span>' : '<span class="cross">✗</span>';
+  return `${icon} <span>${res.length} result${res.length!==1?'s':''}</span>`;
+}
+
+function renderCards(res) {
+  const area = document.getElementById('results-area');
+  if (res.length===0) {
+    area.innerHTML = `
+      <div class="empty-state">
+        <div class="emoji">🔍</div>
+        <h3>No results found</h3>
+        <p>This tool covers resident TDS sections 192–194T.<br>Try a different section or keyword.</p>
+        <div class="try-chips">
+          ${['194C','194J(b)','194H','194IB','194T'].map(s=>`<button class="try-chip" onclick="quickSection('${s}')">${s}</button>`).join('')}
+        </div>
+      </div>`;
+    return;
+  }
+  area.innerHTML = `<div class="card-grid">${res.map(d=>cardHTML(d)).join('')}</div>`;
+}
+
+function quickSection(s) {
+  document.getElementById('search-input').value = s;
+  currentMode = 'section';
+  document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelector('.mode-tab[data-mode="section"]').classList.add('active');
+  doSearch(s);
+}
+
+function cardHTML(d) {
+  const rateDown = d.ch==='rate' && d.or!==d.nr;
+  const chLabels = { rate:'Rate ↓', threshold:'Thresh ↑', new:'New', same:'Unchanged' };
+  const chBadge  = { rate:'badge-rate', threshold:'badge-threshold', new:'badge-new', same:'badge-same' };
+
+  return `
+  <div class="result-card" data-ch="${d.ch}">
+    <div class="card-top">
+      <div class="card-badges">
+        <span class="badge ${chBadge[d.ch]||'badge-same'}">${chLabels[d.ch]||'Unchanged'}</span>
+        ${d.inf ? `<span class="badge badge-inferred">★ Inferred</span>` : ''}
+        ${d.sub==='Portal Verified' ? `<span class="badge badge-portal">✓ Portal</span>` : ''}
+        <span class="badge-cat">${d.cat}</span>
+      </div>
+      <button class="code-btn" id="cbtn-${d.code}" onclick="copyCode('${d.code}')">${d.code}</button>
+    </div>
+    <div class="card-nature">${d.nature}</div>
+    ${d.sub && d.sub!=='Portal Verified' ? `<div class="card-sub">${d.sub}</div>` : '<div style="margin-bottom:10px"></div>'}
+    <div class="section-strip">
+      <span class="sec-old">${d.sec}</span>
+      <span class="sec-arrow">→</span>
+      <span class="sec-new">${d.ns}</span>
+      <span class="sec-form">${d.form}</span>
+    </div>
+    <div class="rate-grid">
+      <div class="rate-cell">
+        <div class="rate-cell-label">Old Rate</div>
+        <div class="rate-cell-val${rateDown?' old-crossed':''}">${d.or}</div>
+      </div>
+      <div class="rate-cell${rateDown?' highlight':''}">
+        <div class="rate-cell-label">New Rate</div>
+        <div class="rate-cell-val${rateDown?' new-rate':''}">${d.nr}</div>
+      </div>
+      <div class="rate-cell">
+        <div class="rate-cell-label">Threshold</div>
+        <div class="rate-cell-val threshold">${d.threshold}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ─── COPY CODE ──────────────────────────── */
+function copyCode(code) {
+  navigator.clipboard?.writeText(code).catch(()=>{});
+  const btn = document.getElementById('cbtn-'+code);
+  if (!btn) return;
+  btn.textContent = '✓ Copied'; btn.classList.add('copied');
+  setTimeout(() => { btn.textContent = code; btn.classList.remove('copied'); }, 1600);
+}
+
+/* ─── QUICK CHIPS ────────────────────────── */
+function buildQuickChips() {
+  const el = document.getElementById('quick-chips');
+  const chips = {
+    section:     ["194C","194J","194H","194I","192A","194IB","194O","194T","194N"],
+    description: ["rent","salary","contractor","professional fees","dividend","interest","crypto","partner","insurance"],
+    code:        ["1023","1024","1027","1028","1029","1035","1067","1065"],
+  };
+  el.innerHTML = (chips[currentMode]||[]).map(c=>`
+    <button class="quick-chip" onclick="quickChipClick('${c}')">${c}</button>
+  `).join('');
+}
+
+function quickChipClick(val) {
+  document.getElementById('search-input').value = val;
+  if (currentMode==='description') {
+    const words = val.split(/\s+/);
+    const res = TDS_DATA.filter(d=>{
+      const txt = `${d.nature} ${d.sub||''} ${d.cat}`.toLowerCase();
+      return words.every(w=>txt.includes(w));
+    });
+    currentResults = res; searched = true; currentCatFilter = 'All';
+    renderResults(res, val);
+    document.getElementById('landing').style.display = 'none';
+  } else {
+    doSearch(val);
+  }
+}
+
+/* ─── CATEGORY BROWSE ────────────────────── */
+function buildCatBrowse() {
+  const el = document.getElementById('cat-browse');
+  el.innerHTML = CATEGORIES.map(cat=>{
+    const cnt = TDS_DATA.filter(d=>d.cat===cat).length;
+    return `<button class="cat-chip" onclick="browseCategory('${cat}')">${cat} <span class="count">(${cnt})</span></button>`;
+  }).join('');
+}
+
+function browseCategory(cat) {
+  const res = [...TDS_DATA].sort((a,b)=>+a.code-+b.code);
+  currentResults = res; searched = true; currentCatFilter = cat;
+  renderResults(res, 'All');
+  // apply cat filter after render
+  setTimeout(() => {
+    applyCatFilter(cat, document.querySelector(`.filter-chip`));
+    document.querySelectorAll('.filter-chip').forEach(c=>{
+      if(c.textContent.startsWith(cat)) c.classList.add('active');
+      else c.classList.remove('active');
+    });
+  }, 10);
+  document.getElementById('landing').style.display = 'none';
+}
+
+/* ─── CSV EXPORT ─────────────────────────── */
+function downloadCSV() {
+  const data = (searched ? currentResults : TDS_DATA).filter(d=>currentCatFilter==='All'||d.cat===currentCatFilter);
+  const hdr = ['Old Section','New Section','Payment Code','Nature','Category','Threshold','Old Rate','New Rate','Change','Form'];
+  const rows = data.map(d=>[d.sec,d.ns,d.code,`"${d.nature}"`,d.cat,`"${d.threshold}"`,d.or,d.nr,d.ch,d.form]);
+  const csv = [hdr.join(','),...rows.map(r=>r.join(','))].join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download = `TDS_Codes_JMR_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+/* ─── CLOSE AUTOCOMPLETE ON OUTSIDE CLICK ── */
+document.addEventListener('click', e => {
+  if (!e.target.closest('.search-input-wrap')) closeAC();
+});
+</script>
+</body>
+</html>
